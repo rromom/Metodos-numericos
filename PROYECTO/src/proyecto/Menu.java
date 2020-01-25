@@ -1,15 +1,15 @@
 package proyecto;
 
-import java.util.*;;
+import java.util.*;
 
 public class Menu {
 
-	private static Scanner teclado;
+	public static Scanner teclado;
 
 	public static void main(String[] args) {
-		
+
 		teclado = new java.util.Scanner(System.in);
-		
+
 		int opc=-1;
 		while (opc!=0) {
 			System.out.println("1. Metodo de Gauss Jordan");
@@ -26,7 +26,7 @@ public class Menu {
 		switch (opc) {
 		case 1:
 			System.out.println("------- Metodo de Gauss Jordan -------");
-			
+
 			break;
 		case 2:
 			System.out.println("------- Metodo de Biseccion -------");
@@ -35,7 +35,7 @@ public class Menu {
 			System.out.println("------- Metodo de la Secante -------");
 			break;
 		case 4:
-			System.out.println("------- Metodo de la Secante -------");
+			System.out.println("------- Metodo de Lagrange -------");
 			break;
 		case 0:
 			System.out.println("Gracias por usar nuestro sistema");
@@ -44,11 +44,9 @@ public class Menu {
 			System.out.println("Opcion incorrecta ingrese nuevamente");
 			break;
 		}
-		System.out.println("");
-			
-			
+
 		}
-		
+
 	}
 
 }
