@@ -1,8 +1,3 @@
-import java.util.ArrayList;
-import javax.swing.JOptionPane;
-import java.math.*;
-
-
 public class GaussJordan {
 
     static int var=4;
