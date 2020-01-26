@@ -1,3 +1,5 @@
+package metodos;
+
 public class GaussJordan {
 
     static int var=4;
@@ -8,7 +10,7 @@ public class GaussJordan {
         float[][] m = {
                 {3,2,5,8},{1,4,2,7},{-2,4,8,0}
         };
-        jordan(m, 3);
+        calcular(m, 3);
 
     }
 
@@ -45,7 +47,7 @@ public class GaussJordan {
     }
 
     // metodo de gauss jordan
-    public static void jordan(float[][] matrix, int var){
+    public static void calcular(float[][] matrix, int var){
         int piv=0;
         for (int a = 0; a < var; a++) {
             pivote(matrix, piv, var);

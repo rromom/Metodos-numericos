@@ -3,6 +3,8 @@ package proyecto;
 import java.util.*;
 
 import metodos.Biseccion;
+import metodos.GaussJordan;
+import metodos.Lagrange;
 
 public class Menu {
 
@@ -29,7 +31,20 @@ public class Menu {
 		switch (opc) {
 		case 1:
 			System.out.println("------- Metodo de Gauss Jordan -------");
+			System.out.print(" Ingrese el numero de variables: ");
+			int variables = teclado.nextInt();
 
+			float[][] valores = new float[variables][variables+1];
+
+			for (int i = 0; i < variables; i++) {
+				System.out.println("\nIngrese los coeficientes de la ecuacion "+(i+1)+": ");
+				for (int j = 0; j < valores[i].length; j++) {
+					System.out.println("valor "+(j+1));
+					valores[i][j] = teclado.nextFloat();
+				}
+			}
+
+			GaussJordan.calcular(valores, variables);
 			break;
 		case 2:
 			teclado.nextLine();
@@ -59,6 +74,24 @@ public class Menu {
 			break;
 		case 4:
 			System.out.println("------- Metodo de Lagrange -------");
+			System.out.println("Ingrese la cantidad de puntos");
+			int npuntos = teclado.nextInt();
+			int x[] = new int[npuntos];
+			int y[] = new int[npuntos];
+			for (int j = 0; j < npuntos; j++) {
+				System.out.println("ingrese el punto "+j+" para x: ");
+				x[j] = teclado.nextInt();
+				System.out.println("ingrese el punto "+j+" para y: ");
+				y[j] = teclado.nextInt();
+
+			}
+			System.out.println("ingrese el valor a evaluar: ");
+			int punto = teclado.nextInt();
+
+			Lagrange pl = new Lagrange(y, x);
+			double res = pl.evaluar(punto);
+			System.out.println("El resultado es: "+res);
+
 			break;
 		case 0:
 			System.out.println("Gracias por usar nuestro sistema");
