@@ -30,6 +30,8 @@ public class Menu {
 			break;
 		case 2:
 			System.out.println("------- Metodo de Biseccion -------");
+			System.out.println("Ingrese el grado de la ecuacion");
+			
 			break;
 		case 3:
 			System.out.println("------- Metodo de la Secante -------");
