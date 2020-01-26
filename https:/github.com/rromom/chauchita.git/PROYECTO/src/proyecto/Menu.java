@@ -2,8 +2,6 @@ package proyecto;
 
 import java.util.*;
 
-import metodos.Biseccion;
-
 public class Menu {
 
 	public static Scanner teclado;
@@ -11,8 +9,7 @@ public class Menu {
 	public static void main(String[] args) {
 
 		teclado = new java.util.Scanner(System.in);
-		teclado.useLocale(Locale.US);
-		
+
 		int opc=-1;
 		while (opc!=0) {
 			System.out.println("1. Metodo de Gauss Jordan");
@@ -32,9 +29,8 @@ public class Menu {
 
 			break;
 		case 2:
-			teclado.nextLine();
 			System.out.println("------- Metodo de Biseccion -------");
-			System.out.println("ingrese el valor inferior A");
+			System.out.println("ingrese el valor inferior (A)");
 			double a=teclado.nextDouble();
 			System.out.println("ingrese el valor superior (B)");
 			double b=teclado.nextDouble();
@@ -42,17 +38,6 @@ public class Menu {
 			double t=teclado.nextDouble();
 			System.out.println("ingrese el numero maximo de iteraciones");
 			int i=teclado.nextInt();
-			System.out.println("ingrese el grado de la ecuacion");
-			int g=teclado.nextInt();
-			System.out.println("ingrese los coeficientes en orden");
-			double v[]=new double[g+1];
-			for (int j = 0; j < v.length; j++) {
-				v[j]=teclado.nextDouble();
-			}
-			Biseccion biseccion= new Biseccion(a, b, t, i);
-			double sol=biseccion.calcularRaiz(g, v);
-			System.out.println("la raiz es: "+sol);
-			
 			break;
 		case 3:
 			System.out.println("------- Metodo de la Secante -------");
