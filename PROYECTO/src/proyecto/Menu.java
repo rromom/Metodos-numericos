@@ -5,6 +5,7 @@ import java.util.*;
 import metodos.Biseccion;
 import metodos.GaussJordan;
 import metodos.Lagrange;
+import metodos.Secante;
 
 public class Menu {
 
@@ -71,6 +72,24 @@ public class Menu {
 			break;
 		case 3:
 			System.out.println("------- Metodo de la Secante -------");
+			System.out.println("ingrese el valor inferior A");
+			double as=teclado.nextDouble();
+			System.out.println("ingrese el valor superior (B)");
+			double bs=teclado.nextDouble();
+			System.out.println("ingrese la tolerncia");
+			double ts=teclado.nextDouble();
+			System.out.println("ingrese el numero maximo de iteraciones");
+			int is=teclado.nextInt();
+			System.out.println("ingrese el grado de la ecuacion");
+			int gs=teclado.nextInt();
+			System.out.println("ingrese los coeficientes en orden");
+			double vs[]=new double[gs+1];
+			for (int j = 0; j < vs.length; j++) {
+				vs[j]=teclado.nextDouble();
+			}
+			Secante secante = new Secante(as, bs);
+			double sols=secante.calcRaiz(gs, vs,ts);
+			System.out.println("El resultado es: "+sols);
 			break;
 		case 4:
 			System.out.println("------- Metodo de Lagrange -------");
